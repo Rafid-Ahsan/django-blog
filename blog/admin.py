@@ -1,5 +1,8 @@
 from django.contrib import admin
+from . import models
 
 # Register your models here.
-from .models import Post
-admin.site.register(Post)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'author', 'publish', 'status')
+
+admin.site.register(models.Post, AuthorAdmin)
