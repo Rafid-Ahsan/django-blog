@@ -1,0 +1,23 @@
+{% include 'layouts/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div>
+                <div>
+                    <a href="{{ post.get_absolute_url }}" class="text-decoration-none font-weight-bold">
+                        <h3>{{ post.title }}</h3>
+                    </a>
+                </div>
+                <div>
+                    {{ post.content|safe }}
+                    <br>
+                    <br>
+                <div>
+                <div>
+                    <p class="font-weight-bold">Written by {{ post.author }} - {{ post.publish }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
